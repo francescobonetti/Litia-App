@@ -1,0 +1,14 @@
+{
+    "background_color" : "ffffff",
+    "theme_color": "ffffff",
+    "display": "fullscreen",
+    "icons": [
+        {
+        "src":"google-touch-icon.png",
+        "sizes": "512x512"
+        }
+    ],
+    "name": "Litia",
+    "short_name": "Litia",
+    "start_url": "index.html"
+}

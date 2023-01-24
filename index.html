@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/EaselPlugin.min.js"></script>
+
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="icon" href="assets/logo.svg">
+    <link rel="apple-touch-icon" href="google-touch-icon.png">
+    <link rel="manifest" href="app.webmanifest">
+
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+
+    <title>Litia App</title>
+  </head>
+  <body>
+
+   <!--  <div class="loading">
+      <object data="assets/logo.svg" class="loading-logo"> </object>
+      <div class="loading-rect"></div>
+    </div>  -->
+
+    <div class="interface">
+    
+    <div class="page home active">
+
+        <h4 style="margin-top: 10px;">My SPECTA®</h4>
+        <div class="divider"></div>
+
+        <!-- TOTAL CONTENT YOU WERE PROTECTED FROM -->
+        <section class="total-content">
+            <h1>0</h1>
+            <h4>Total eco-anxious contents you protected yourself from</h4>
+            <p>Keep on using Specta to reduce your eco-anxiety</p>
+        </section>
+
+        <!-- USAGE TIME -->
+        <section class="usage-time">
+            <h4>Usage time</h4>
+            <div class="divider"></div>
+            <div class="toggle-container">
+                <h5 class="active"> Daily</h5>
+                <h5>Weekly</h5>
+            </div>
+            <div class="divider" style="margin-bottom: 30px;"></div>
+
+            <div class="daily-usage usage active">
+
+                <div class="daily-usage-slide-container usage-slide-container">
+                    <div class="daily-usage-slide usage-slide">
+                        <p>15th October</p>
+                        <h2>1h 40min</h2>
+                        <div class="diagram-container"><img src="assets/Schema-orario.png" alt=""></div>
+                    </div>
+                    <div class="daily-usage-slide usage-slide">
+                        <p>16th October</p>
+                        <h2>1h 40min</h2>
+                        <div class="diagram-container"><img src="assets/Schema-orario.png" alt=""></div>
+                    </div>
+                    <div class="daily-usage-slide usage-slide">
+                        <p>17th October</p>
+                        <h2>1h 40min</h2>
+                        <div class="diagram-container"><img src="assets/Schema-orario.png" alt=""></div>
+                    </div>
+                    <div class="daily-usage-slide usage-slide">
+                        <p>18th October</p>
+                        <h2>1h 40min</h2>
+                        <div class="diagram-container"><img src="assets/Schema-orario.png" alt=""></div>
+                    </div>
+                    <div class="daily-usage-slide usage-slide">
+                        <p>19h October</p>
+                        <h2>1h 40min</h2>
+                        <div class="diagram-container"><img src="assets/Schema-orario.png" alt=""></div>
+                    </div>
+                    <div class="daily-usage-slide usage-slide">
+                        <p>20th October</p>
+                        <h2>1h 40min</h2>
+                        <div class="diagram-container"><img src="assets/Schema-orario.png" alt=""></div>
+                    </div>
+                    <div class="daily-usage-slide usage-slide trigger">
+                        <p>21th October</p>
+                        <h2>1h 40min</h2>
+                        <div class="diagram-container"><img src="assets/Schema-orario.png" alt=""></div>
+                    </div>
+                </div>
+
+                <div class="week-container">
+                    <p class="month">October</p>
+                    <div class="days-container days-navigation">
+                        <p>13 <br> M</p>
+                        <p>14 <br> T</p>
+                        <p>15 <br> W</p>
+                        <p>16 <br> T</p>
+                        <p>17 <br> F</p>
+                        <p>18 <br> S</p>
+                        <p>19 <br> S</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="weekly-usage usage">
+
+                <div class="weekly-usage-slide-container usage-slide-container">
+
+                    <div class="weekly-usage-slide usage-slide">
+                        <p>15th-22nd October</p>
+                        <h2>1h 40min <span style="font-size: 18px;"> on average</span></h2>
+                        <div class="diagram-container"><img src="assets/Schema-settimanale.png" alt=""></div>
+                        <div class="week-container">
+                            <div class="days-container" style="width: 85%;">
+                                <p class="active">M</p>
+                                <p class="active">T</p>
+                                <p class="active">W</p>
+                                <p class="active">T</p>
+                                <p class="active">F</p>
+                                <p class="active">S</p>
+                                <p class="active">S</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="weekly-usage-slide usage-slide">
+                        <p>15th-22nd October</p>
+                        <h2>1h 40min <span style="font-size: 18px;"> on average</span></h2>
+                        <div class="diagram-container"><img src="assets/Schema-settimanale.png" alt=""></div>
+                        <div class="week-container">
+                            <div class="days-container" style="width: 85%;">
+                                <p class="active">M</p>
+                                <p class="active">T</p>
+                                <p class="active">W</p>
+                                <p class="active">T</p>
+                                <p class="active">F</p>
+                                <p class="active">S</p>
+                                <p class="active">S</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="weekly-usage-slide usage-slide">
+                        <p>15th-22nd October</p>
+                        <h2>1h 40min <span style="font-size: 18px;"> on average</span></h2>
+                        <div class="diagram-container"><img src="assets/Schema-settimanale.png" alt=""></div>
+                        <div class="week-container">
+                            <div class="days-container" style="width: 85%;">
+                                <p class="active">M</p>
+                                <p class="active">T</p>
+                                <p class="active">W</p>
+                                <p class="active">T</p>
+                                <p class="active">F</p>
+                                <p class="active">S</p>
+                                <p class="active">S</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="weekly-usage-slide usage-slide">
+                        <p>15th-22nd October</p>
+                        <h2>1h 40min <span style="font-size: 18px;"> on average</span></h2>
+                        <div class="diagram-container"><img src="assets/Schema-settimanale.png" alt=""></div>
+                        <div class="week-container">
+                            <div class="days-container" style="width: 85%;">
+                                <p class="active">M</p>
+                                <p class="active">T</p>
+                                <p class="active">W</p>
+                                <p class="active">T</p>
+                                <p class="active">F</p>
+                                <p class="active">S</p>
+                                <p class="active">S</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="weekly-usage-slide usage-slide active">
+                        <p>15th-22nd October</p>
+                        <h2>1h 40min <span style="font-size: 18px;"> on average</span></h2>
+                        <div class="diagram-container"><img src="assets/Schema-settimanale.png" alt=""></div>
+                        <div class="week-container">
+                            <div class="days-container" style="width: 85%;">
+                                <p class="active">M</p>
+                                <p class="active">T</p>
+                                <p class="active">W</p>
+                                <p class="active">T</p>
+                                <p class="active">F</p>
+                                <p class="active">S</p>
+                                <p class="active">S</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>            
+
+                <div class="weeks-navigation">
+                    <div class=" arrow arrow-left"> <img src="assets/arrow.png" alt=""></div>
+                    <div class="weeks-container">
+                        <p>18th - 25th October</p>
+                        <p>10th - 17th October</p>
+                        <p>2nd - 9th October</p>
+                        <p>24th September - 1st October</p>
+                        <p>16th - 23rd September</p>
+                    </div>
+                    <div class="arrow arrow-right"> <img src="assets/arrow.png" alt=""></div>
+                </div>
+            </div>
+
+        </section>
+        
+    </div>
+
+    <div class="page profile">
+        <h4 style="margin-top: 10px;">Profile</h4>
+        <div class="divider"></div>
+
+        <section class="user">
+            <div class="profile-picture">
+                <img src="assets/profile-picture.jpg" alt="">
+            </div>
+            <div style="max-width: 45%; display: flex; flex-direction: column; justify-content: space-between;">
+                <h4>Jack <br> Stone</h4>
+                <p>341 days with Specta</p>
+                <p class="button"> Edit Profile </p>
+            </div>
+        </section>
+
+        <section>
+            <h4 style="margin-top: 10px;">My devices</h4>
+            <div class="divider"></div>
+            <div class="spacebetween"> <p>Jack's SPECTA®</p> <p class="inactive" style="text-decoration: underline;">Disconnect</p></div>
+            <div class="divider"></div>
+            <div class="spacebetween"> <p>Home's SPECTA®</p> <p class="inactive" style="text-decoration: underline;">Disconnect</p></div>
+            <div class="divider"></div>
+            <p class="button newconnection" style="margin-top: 25px;">+ Connect a new device</p>
+        </section>
+
+        <section>
+            <h4 style="margin-top: 10px;">Profile Settings</h4>
+            <div class="divider"></div>
+            <div class="table"><p>Email</p> <p class="inactive">jackstone@gmail.com</p></div>
+            <div class="divider"></div>
+            <div class="table"><p>Phone Number</p> <p class="inactive">+45 2768367427</p></div>
+            <div class="divider"></div>
+            <div class="table"><p>Password</p> <p class="inactive">··········</p></div>
+            <div class="divider"></div>
+            <p class="button" style="margin-top: 25px;">Edit settings</p>
+        </section>
+    </div>
+
+    </div>
+
+    <div class="overlay">
+
+        <div class="connection-step active">
+            <p>1/3</p>
+            <div class="divider"></div>
+            <h4>To connect a new Specte device plug the base in</h4>
+            <div class="step-image-container">
+                <video src="assets/plug-base.mp4"></video>
+            </div>
+        </div>
+
+        <div class="connection-step">
+            <p>2/3</p>
+            <div class="divider"></div>
+            <h4>Choose your Wi-Fi</h4>
+            <div class="divider"></div>
+            <div class="spacebetween"><p>Vodafone 13A65B</p> <p class="inactive underline">Connect</p> </div>                    
+            <div class="divider"></div>
+            <div class="spacebetween"><p>Fastweb 5G</p> <p class="inactive underline">Connect</p> </div>                    
+            <div class="divider"></div>
+            <div class="spacebetween"><p>Mark's Home</p> <p class="inactive underline">Connect</p> </div>                    
+            <div class="divider"></div>
+            <div class="spacebetween"><p>Ho Wi-Fi 3A7H1</p> <p class="inactive underline">Connect</p> </div> 
+            <div class="divider"></div>                   
+        </div>
+
+        <div class="connection-step">
+            <p>3/3</p>
+            <div class="divider"></div>
+            <h4>Hold Specta for 3 seconds to connect it to your phone</h4>
+            <div id="hold-specta"></div>
+        </div>
+
+        <div class="steps-navigation spacebetween aligncenter">
+            <p class="close inactive underline">Close</p>
+            <p class="back inactive underline">Back</p>
+            <p class="next button ">Next</p>
+        </div>
+
+    </div>
+
+    <!-- MENU -->
+    <div class="menu-container">
+        <div class="menu-image-container home-btn active" onclick="openHome()">
+            <img src="assets/menu-home.png" alt="">
+        </div>
+        <div class="menu-image-container profile-btn" onclick="openProfile()">
+            <img src="assets/menu-profile.png" alt="">
+        </div>
+    </div>
+    
+    <script src="app.js"></script>
+    <!-- <script type="module" src="main.js"></script> -->
+  </body>
+</html>
