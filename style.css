@@ -281,9 +281,13 @@ img {
     bottom: 60px; 
 }
 
-#hold-specta {height: 80%; overflow: hidden;}
+#hold-specta {height: 70%; overflow: hidden; display: flex; align-items: center; position: relative; top: 0%}
 
-#hold-specta canvas {height: 100%; width: 100%; padding: 0;}
+#hold-specta video {height: 150%; width: 100%; transition: 0.5s;}
+
+#hold-specta video.connected {height: 180%;}
+
+.connection-status {opacity: 0;}
 
 /* LOADING */
 

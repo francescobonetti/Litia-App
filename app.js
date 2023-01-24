@@ -30,6 +30,11 @@ let profileBtn = document.querySelector(".profile-btn")
 function openHome() {home.classList.add("active"); homeBtn.classList.add("active"); profile.classList.remove("active"); profileBtn.classList.remove("active");}
 function openProfile() {profile.classList.add("active"); profileBtn.classList.add("active"); home.classList.remove("active"); homeBtn.classList.remove("active");}
 
+
+let holdSpecta = document.querySelector("#hold-specta")
+let tl = gsap.timeline({defaults : {duration: 1, ease: Power2.easeInOut}})
+let slide3 = false;
+
 function setup() {
 
   
@@ -113,6 +118,15 @@ function draw() {
     else { closeOverlay.style.display = "none"; backBtn.style.display = "block"}
     if (stepsIndex == (connectionSteps.length - 1)) {nextBtn.style.display = "none";} else {nextBtn.style.display = "block";}
 
+    if(holdSpecta.getBoundingClientRect().x < 150 && slide3 == false) {
+        slide3 = true;
+        comeUpAnimation()
+    }
+
+    if(holdSpecta.getBoundingClientRect().x > 150 && slide3 == true) {
+        slide3 = false;
+        goDownAnimation()
+    }
 
 }
 
@@ -172,6 +186,8 @@ let connectionSteps = Array.from(document.querySelectorAll(".connection-step"))
 newConnection.addEventListener("click", function(){
     connectionOverlay.classList.add("active")
     overlayNav.classList.add("active")
+    let plugVideo = document.querySelector(".connection-step.active .step-image-container video")
+    setTimeout(function(){plugVideo.play()}, 1000)
     stepsWidth = connectionSteps[0].getBoundingClientRect().width
     connectionOverlay.scrollTo({
         left: 0
@@ -221,6 +237,23 @@ connectWifi.forEach(function(connect){
         
     })
 })
+
+let spectaVideo = holdSpecta.querySelector("video")
+let connectionStatus = document.querySelector(".connection-status")
+
+function comeUpAnimation() {
+    spectaVideo.play()
+    let connectionOverlay = document.querySelector(".overlay")
+    let overlayNav = document.querySelector(".steps-navigation")
+    setTimeout(function() {connectionStatus.style.opacity = 1}, 1000)
+    setTimeout(function(){spectaVideo.pause(); spectaVideo.classList.add("connected"); connectionStatus.innerHTML = "Connected"}, 3000)
+    setTimeout(function() {if(slide3 == true) {connectionOverlay.classList.remove("active"); overlayNav.classList.remove("active"); spectaVideo.classList.remove("connected"); connectionStatus.style.opacity = 0}}, 4500)
+
+}
+
+function goDownAnimation() {
+spectaVideo.pause()
+}
 
 
 

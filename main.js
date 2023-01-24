@@ -127,6 +127,8 @@ function setupPosition(){
     
 }
 
+let connectionStatus = document.querySelector(".connection-status")
+
 function comeUpAnimation() {
 
     tl.to(specta.position, {y: 2})
