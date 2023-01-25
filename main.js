@@ -1,12 +1,12 @@
-import * as THREE from 'three';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
-import { RGBELoader } from 'three/examples/jsm/loaders/RGBELoader.js';
+import * as THREE from 'https://cdn.skypack.dev/three@0.133.1/build/three.module.js';
+import { RGBELoader } from 'https://cdn.skypack.dev/three@0.133.1/examples/jsm/loaders/RGBELoader.js';
+import { GLTFLoader } from 'https://cdn.skypack.dev/three@0.133.1/examples/jsm/loaders/GLTFLoader.js';
 const hdrTextureURL = new URL('assets/brown_photostudio_07_1k.hdr', import.meta.url); 
 gsap.registerPlugin(ScrollTrigger);
 
 const scene = new THREE.Scene();
 
-let container = document.querySelector("#hold-specta")
+let container = document.querySelector(".container3d")
 let specta;
 let basetta;
 let camera;
@@ -112,7 +112,8 @@ function loop() {
         slide3 = false;
         goDownAnimation()
     }
-    
+
+       
   }
 
 loop()
@@ -132,10 +133,17 @@ let connectionStatus = document.querySelector(".connection-status")
 function comeUpAnimation() {
 
     tl.to(specta.position, {y: 2})
-    tl.to(specta.position, {z:7, duration: 1, ease: Back.easeInOut.config(1), delay: 3})
+    tl.call(function() {connectionStatus.style.opacity = 1}, null, "<+2")
+    tl.to(specta.position, {y: 2.4})
+    tl.to(specta.position, {y: 2})
+    tl.to(specta.position, {y: 2.4})
+    tl.to(specta.position, {y: 2})
+    tl.to(specta.position, {z:7, duration: 1, ease: Back.easeInOut.config(1)})
+    .add(function(){connectionStatus.innerHTML = "Connected"}, '<+=0.5')
     let connectionOverlay = document.querySelector(".overlay")
     let overlayNav = document.querySelector(".steps-navigation")
-    tl.call(function() {if(slide3 == true) {connectionOverlay.classList.remove("active"); overlayNav.classList.remove("active")}}, null, "+=0.5")
+    tl.call(function() {if(slide3 == true) {connectionOverlay.classList.remove("active"); overlayNav.classList.remove("active");}}, null, "+=1")
+    tl.call(function(){connectionStatus.style.opacity = 0; connectionStatus.innerHTML = "Connecting..."}, null, "<+=1")
 
 }
 

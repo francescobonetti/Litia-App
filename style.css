@@ -35,7 +35,7 @@ h1 {font-size: 96px;}
 .button {
     text-align: center;
     border-style: solid;
-    border-width: 2px;
+    border-width: 1px;
     padding: 0.5em;
     width: fit-content;
     cursor: pointer;
@@ -282,14 +282,14 @@ img {
     bottom: 60px; 
 }
 
-#hold-specta {height: 70%; overflow: hidden; display: flex; position: relative; top: 0%;}
+#hold-specta {height: 100%; overflow: hidden;}
 
-#hold-specta img {
-    height: 150%; width: 100%; object-fit: cover;
-    transition: 0.5s; position: absolute; top: 50%; transform: translateY(-50%);
-    animation-name: holdspecta; animation-duration: 2s; animation-play-state: paused; animation-iteration-count: infinite;}
+.container3d canvas {height: 100%; width: 100%; padding: 0;}
 
-#hold-specta img.connected {height: 170%;}
+.container3d {
+    height: 80%;
+    width: 100%;
+}
 
 @keyframes holdspecta {
     0% {top: 50%;}

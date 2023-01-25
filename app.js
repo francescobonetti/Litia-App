@@ -118,15 +118,6 @@ function draw() {
     else { closeOverlay.style.display = "none"; backBtn.style.display = "block"}
     if (stepsIndex == (connectionSteps.length - 1)) {nextBtn.style.display = "none";} else {nextBtn.style.display = "block";}
 
-    if(holdSpecta.getBoundingClientRect().x < 150 && slide3 == false) {
-        slide3 = true;
-        comeUpAnimation()
-    }
-
-    if(holdSpecta.getBoundingClientRect().x > 150 && slide3 == true) {
-        slide3 = false;
-        goDownAnimation()
-    }
 
 }
 
@@ -238,25 +229,7 @@ connectWifi.forEach(function(connect){
     })
 })
 
-let spectaVideo = holdSpecta.querySelector("img")
-let connectionStatus = document.querySelector(".connection-status")
 
-function comeUpAnimation() {
-    let connectionOverlay = document.querySelector(".overlay")
-    let overlayNav = document.querySelector(".steps-navigation")
-    setTimeout(function() {connectionStatus.style.opacity = 1; spectaVideo.style.animationPlayState = 'running';}, 1000)
-    setTimeout(function(){spectaVideo.classList.add("connected"); connectionStatus.innerHTML = "Connected"; spectaVideo.style.animationPlayState = 'paused';}, 4000)
-    setTimeout(function() {if(slide3 == true) {connectionOverlay.classList.remove("active"); overlayNav.classList.remove("active"); spectaVideo.classList.remove("connected"); connectionStatus.style.opacity = 0; connectionStatus.innerHTML = "Connecting..."}}, 6000)
-
-}
-
-function goDownAnimation() {
-    console.log("go down")
-    spectaVideo.classList.remove("connected");
-    connectionStatus.style.opacity = 0;
-    connectionStatus.innerHTML = "Connecting..."
-    spectaVideo.style.animationPlayState = 'paused';
-}
 
 
 
