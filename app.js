@@ -22,13 +22,14 @@ let stepsWidth;
 
 let windowWidth = window.innerWidth
 
+let interface = document.querySelector(".interface")
 let home = document.querySelector(".home")
 let profile = document.querySelector(".profile")
 let homeBtn = document.querySelector(".home-btn")
 let profileBtn = document.querySelector(".profile-btn")
 
-function openHome() {home.classList.add("active"); homeBtn.classList.add("active"); profile.classList.remove("active"); profileBtn.classList.remove("active");}
-function openProfile() {profile.classList.add("active"); profileBtn.classList.add("active"); home.classList.remove("active"); homeBtn.classList.remove("active");}
+function openHome() {home.classList.add("active"); homeBtn.classList.add("active"); profile.classList.remove("active"); profileBtn.classList.remove("active"); interface.scrollTo({top:0, behavior: "auto"})}
+function openProfile() {profile.classList.add("active"); profileBtn.classList.add("active"); home.classList.remove("active"); homeBtn.classList.remove("active"); interface.scrollTo({top:0, behavior: "auto"})}
 
 
 let holdSpecta = document.querySelector("#hold-specta")
@@ -68,6 +69,8 @@ function keyPressed () {if(spectaOn == true){spectaOn = false;} else {spectaOn =
 
 
 function draw() {
+
+    console.log(home.getBoundingClientRect().x)
 
     contentCounter.innerHTML = totalContent
 
