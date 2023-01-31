@@ -70,8 +70,6 @@ function keyPressed () {if(spectaOn == true){spectaOn = false;} else {spectaOn =
 
 function draw() {
 
-    console.log(home.getBoundingClientRect().x)
-
     contentCounter.innerHTML = totalContent
 
     for(let i = 0; i < dailyUsageSlides.length ; i++) {
