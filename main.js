@@ -110,6 +110,7 @@ function loop() {
 
     if(container.getBoundingClientRect().x > 150 && slide3 == true) {
         slide3 = false;
+        console.log("down")
         goDownAnimation()
     }
 
@@ -132,21 +133,31 @@ let connectionStatus = document.querySelector(".connection-status")
 
 function comeUpAnimation() {
 
+    tl.to("#hold-specta p", {opacity: 0, duration: 0.5, delay: 1})
+    tl.to("#hold-specta .divider", {width: 0, opacity:0, duration: 0.5}, '<')
+    tl.to("#hold-specta h4", {opacity: 0, duration: 0.5}, '<')
     tl.to(specta.position, {y: 2})
-    tl.call(function() {connectionStatus.style.opacity = 1}, null, "<+2")
-    tl.to(specta.position, {y: 2.4})
+    tl.to("#hold-specta h3", {opacity: 1, y:"-10%" , duration: 0.5}, '<')
+    /* .add(function(){connectionStatus.innerHTML = "Connected"}, '<+=1')
+    tl.call(function() {connectionStatus.style.opacity = 1}, null, '<') */
+    
+    /* tl.to(specta.position, {y: 2.4})
     tl.to(specta.position, {y: 2})
     tl.to(specta.position, {y: 2.4})
     tl.to(specta.position, {y: 2})
     tl.to(specta.position, {z:7, duration: 1, ease: Back.easeInOut.config(1)})
-    .add(function(){connectionStatus.innerHTML = "Connected"}, '<+=0.5')
+    .add(function(){connectionStatus.innerHTML = "Connected"}, '<+=0.5') */
+
     let connectionOverlay = document.querySelector(".overlay")
     let overlayNav = document.querySelector(".steps-navigation")
-    tl.call(function() {if(slide3 == true) {connectionOverlay.classList.remove("active"); overlayNav.classList.remove("active");}}, null, "+=1")
-    tl.call(function(){connectionStatus.style.opacity = 0; connectionStatus.innerHTML = "Connecting..."}, null, "<+=1")
-
+    tl.call(function() {if(slide3 == true) {connectionOverlay.classList.remove("active"); overlayNav.classList.remove("active");}}, null, "<+=2")
+   /*  tl.call(function(){connectionStatus.style.opacity = 0; connectionStatus.innerHTML = "Connecting..."}, null, "<+=1") */
 }
 
 function goDownAnimation() {
-    tl.to(specta.position, {y: -15, z:4, duration: 0.5})
+    tl.to(specta.position, {y: -15, z:4, duration: 0.2})
+    tl.to("#hold-specta p", {opacity: 1, duration: 0.2}, '<')
+    tl.to("#hold-specta .divider", {width: "100%", opacity:1, duration: 0.2}, '<')
+    tl.to("#hold-specta h4", {opacity: 1, duration: 0.2}, '<')
+    tl.to("#hold-specta h3", {opacity: 0, y:0 , duration: 0.2}, '<')
 }

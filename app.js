@@ -28,6 +28,16 @@ let profile = document.querySelector(".profile")
 let homeBtn = document.querySelector(".home-btn")
 let profileBtn = document.querySelector(".profile-btn")
 
+let litiers = ["Francesco <br> Bonetti", "Emiliano <br> Garibaldi", "Camilla <br> Tosi", "Federico <br> Gajo", "Enrico <br> Isidori", "Cecilia <br> Pizzagalli"]
+let username = document.querySelector(".username")
+let userIndex = 0
+let profileContainer = document.querySelector(".profile-picture")
+let profileImage = profileContainer.children[0]
+function nextUser() {userIndex ++;
+    if(userIndex > 5) {userIndex = 0}
+    username.innerHTML = litiers[userIndex];
+    profileContainer.scrollTo(profileImage.getBoundingClientRect().width * userIndex, 0)}
+
 function openHome() {home.classList.add("active"); homeBtn.classList.add("active"); profile.classList.remove("active"); profileBtn.classList.remove("active"); interface.scrollTo({top:0, behavior: "auto"})}
 function openProfile() {profile.classList.add("active"); profileBtn.classList.add("active"); home.classList.remove("active"); homeBtn.classList.remove("active"); interface.scrollTo({top:0, behavior: "auto"})}
 
@@ -189,6 +199,7 @@ newConnection.addEventListener("click", function(){
 closeOverlay.addEventListener("click", function(){
     connectionOverlay.classList.remove("active")
     overlayNav.classList.remove("active")
+    interface.scrollTo({top:0, behavior: "auto"})
 
 })
 

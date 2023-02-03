@@ -62,17 +62,17 @@
                     <div class="daily-usage-slide usage-slide">
                         <p>16th October</p>
                         <h2>1h 31min</h2>
-                        <div class="diagram-container"><img src="assets/Schema-orario.png" alt=""></div>
+                        <div class="diagram-container"><img src="assets/Schema-orario-1.png" alt=""></div>
                     </div>
                     <div class="daily-usage-slide usage-slide">
                         <p>17th October</p>
                         <h2>1h 40min</h2>
-                        <div class="diagram-container"><img src="assets/Schema-orario.png" alt=""></div>
+                        <div class="diagram-container"><img src="assets/Schema-orario-2.png" alt=""></div>
                     </div>
                     <div class="daily-usage-slide usage-slide">
                         <p>18th October</p>
                         <h2>1h 11min</h2>
-                        <div class="diagram-container"><img src="assets/Schema-orario.png" alt=""></div>
+                        <div class="diagram-container"><img src="assets/Schema-orario-3.png" alt=""></div>
                     </div>
                     <div class="daily-usage-slide usage-slide">
                         <p>19h October</p>
@@ -82,12 +82,12 @@
                     <div class="daily-usage-slide usage-slide">
                         <p>20th October</p>
                         <h2>1h 44min</h2>
-                        <div class="diagram-container"><img src="assets/Schema-orario.png" alt=""></div>
+                        <div class="diagram-container"><img src="assets/Schema-orario-1.png" alt=""></div>
                     </div>
                     <div class="daily-usage-slide usage-slide trigger">
                         <p>21th October</p>
                         <h2>1h 16min</h2>
-                        <div class="diagram-container"><img src="assets/Schema-orario.png" alt=""></div>
+                        <div class="diagram-container"><img src="assets/Schema-orario-2.png" alt=""></div>
                     </div>
                 </div>
 
@@ -128,7 +128,7 @@
                     <div class="weekly-usage-slide usage-slide">
                         <p>15th-22nd October</p>
                         <h2>1h 31min <span style="font-size: 18px;"> on average</span></h2>
-                        <div class="diagram-container"><img src="assets/Schema-settimanale.png" alt=""></div>
+                        <div class="diagram-container"><img src="assets/Schema-settimanale-1.png" alt=""></div>
                         <div class="week-container">
                             <div class="days-container" style="width: 85%;">
                                 <p class="active">M</p>
@@ -144,7 +144,7 @@
                     <div class="weekly-usage-slide usage-slide">
                         <p>15th-22nd October</p>
                         <h2>1h 06min <span style="font-size: 18px;"> on average</span></h2>
-                        <div class="diagram-container"><img src="assets/Schema-settimanale.png" alt=""></div>
+                        <div class="diagram-container"><img src="assets/Schema-settimanale-2.png" alt=""></div>
                         <div class="week-container">
                             <div class="days-container" style="width: 85%;">
                                 <p class="active">M</p>
@@ -177,7 +177,7 @@
                     <div class="weekly-usage-slide usage-slide active">
                         <p>15th-22nd October</p>
                         <h2>1h 43min <span style="font-size: 18px;"> on average</span></h2>
-                        <div class="diagram-container"><img src="assets/Schema-settimanale.png" alt=""></div>
+                        <div class="diagram-container"><img src="assets/Schema-settimanale-1.png" alt=""></div>
                         <div class="week-container">
                             <div class="days-container" style="width: 85%;">
                                 <p class="active">M</p>
@@ -217,11 +217,16 @@
         <section class="user">
             <div class="profile-picture">
                 <img src="assets/profile-picture.jpg" alt="" style="width: 100%; object-fit: cover;">
+                <img src="assets/profile-picture.jpg" alt="" style="width: 100%; object-fit: cover;">
+                <img src="assets/profile-picture.jpg" alt="" style="width: 100%; object-fit: cover;">
+                <img src="assets/profile-picture.jpg" alt="" style="width: 100%; object-fit: cover;">
+                <img src="assets/profile-picture.jpg" alt="" style="width: 100%; object-fit: cover;">
+                <img src="assets/profile-picture.jpg" alt="" style="width: 100%; object-fit: cover;">
             </div>
             <div style="max-width: 45%; display: flex; flex-direction: column; justify-content: space-between;">
-                <h4>Jack <br> Stone</h4>
+                <h4 class="username" >Jack <br> Stone</h4>
                 <p>341 days with Specta</p>
-                <p class="button"> Edit Profile </p>
+                <p class="button" onclick="nextUser()"> Edit Profile </p>
             </div>
         </section>
 
@@ -257,7 +262,7 @@
             <div class="divider"></div>
             <h4>To connect a new Specte device plug the base in</h4>
             <div class="step-image-container">
-                <video src="assets/plug-base.mp4" loop></video>
+                <video src="assets/plug-base.mp4" loop autoplay muted playsinline></video>
             </div>
         </div>
 
@@ -279,8 +284,9 @@
         <div class="connection-step" id="hold-specta">
             <p>3/3</p>
             <div class="divider"></div>
-            <h4 style="margin-bottom: 10px;">Hold Specta for 3 seconds to connect it to your phone</h4>
-            <p style="font-size: 20px;" class="connection-status">Connecting...</p>
+            <h4 style="margin-bottom: 10px;">Hold Specta to connect it to your phone</h4>
+            <h3 style="position: absolute; top: 10%; text-align: center; width: 100%; opacity: 0;">Specta Connected</h3>
+            <!-- <p style="font-size: 20px;" class="connection-status">Connecting...</p> -->
             <div class="container3d"></div>
         </div>
 
