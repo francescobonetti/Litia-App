@@ -13,7 +13,7 @@ let arrowRight = document.querySelector(".arrow-right")
 let arrowLeft = document.querySelector(".arrow-left")
 
 let contentCounter = document.querySelector(".total-content h1")
-let totalContent = 0;
+let totalContent = 412;
 let randomInterval = 0;
 
 let dailySlideWidth;
